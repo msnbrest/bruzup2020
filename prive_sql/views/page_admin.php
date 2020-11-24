@@ -85,6 +85,7 @@
             <tr>
                <th>Identifiant</th>
                <th>Nom</th>
+               
                <th>Actions</th>
             </tr>
          </thead>
@@ -93,6 +94,8 @@
 <?php foreach ($datas as $seller) { ?>
 
             <tr>
+
+
                <td><?php echo $seller["id"]; ?></td>
                <td><?php echo $seller["nom"]; ?></td>
                <td>
