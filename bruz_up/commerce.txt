@@ -1,0 +1,6 @@
+selon id en get dans l'url
+
+php:
+compter le nombre de resultat id_commercant dans la table (principale)
+si >0 alors select * from (datas) where id = id_voulu [et construire php ensuite]
+sinon 404 commerce non trouvé + aperçu de accueil :D
