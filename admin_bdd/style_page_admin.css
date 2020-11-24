@@ -1,0 +1,161 @@
+body {
+   font-family: sans-serif;
+   background: #ddd;
+   margin: 0;
+}
+
+header {
+   padding: 12px 0;
+   text-align: center;
+   font-size: 20px;
+   font-weight: bold;
+   border-bottom: 2px solid #888
+}
+
+.body_login form{
+	width:100%;
+	max-width:320px;
+	margin:40px auto 0 auto;
+}
+
+main {
+   padding: 20px 0 0 0
+}
+
+
+/* gestion hidden */
+
+.hidden {
+   display: none
+}
+
+body.cadre_ajouter .cadre_ajouter {
+   display: block
+}
+
+body.cadre_modifier .cadre_modifier {
+   display: block
+}
+
+body.cadre_supprimer .cadre_supprimer {
+   display: block
+}
+
+
+/* general */
+
+.wm1200 {
+   width: 100%;
+   max-width: 1200px;
+   margin: auto;
+}
+
+.pa_20_0_0_0 {
+   padding: 20px 0 0 0
+}
+
+form input[type=text],
+form input[type=password] {
+   border: 1px solid #ced4da;
+   border-radius: 5px;
+   padding: 8px 6px;
+   width: 100%;
+   margin: 8px 0 16px 0
+}
+
+table {
+   border-spacing: 0;
+   width: 100%;
+}
+
+button {
+   font-size: 16px;
+   padding: 10px 20px;
+   border: 0;
+   border-radius: 5px;
+   background: #08f;
+   color: #fff;
+   cursor: pointer;
+}
+
+button.vert {
+   background: #0a3
+}
+
+button.annuler {
+   background: #f40
+}
+
+button.fermer {
+   padding: 6px 16px;
+   background: none;
+}
+
+button:hover {
+   color: #fff;
+   background: #000;
+}
+
+.ajouter {
+   font-size: 30px;
+   font-family: cursive;
+   border-radius: 20px;
+   background-color: grey;
+}
+
+.modif {
+   margin-bottom: 5px;
+}
+
+.cadre_div1 {
+   position: fixed;
+   left: 0;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   background: rgba(0, 0, 0, 0.5);
+   color: #fff;
+}
+
+.cadre_div1 form {
+   background: #aaa;
+   padding: 8px 20px 20px 20px;
+   border: 2px solid #048;
+   border-radius: 7px;
+   width: 100%;
+   max-width: 600px;
+   margin: 24px auto 0 auto
+}
+
+.cadre_div1 article {
+   margin: 20px 0 0 12px
+}
+
+.cadre_div1 .bloc4 {
+   padding: 12px 0 0 0;
+   display: flex;
+   justify-content: space-between;
+}
+
+.cadre_div1 .bloc4 span {
+   font-size: 24px
+}
+
+.cadre_div1 .bloc6 {
+   padding: 12px 0 0 0;
+   display: flex;
+   justify-content: space-around;
+}
+
+table.striped tr:nth-child(even) {
+   background: #BBB
+}
+
+table.striped tr:hover {
+   background: #888
+}
+
+table.striped td {
+   border-right: 1px solid #ccc;
+   padding: 2px 0 2px 8px
+}

@@ -1,0 +1,99 @@
+html {
+   font: 16px sans-serif;
+   height: 100%;
+}
+
+body {
+   color: #eee;
+   background: #333;
+   margin: 0;
+   height: 100%;
+}
+
+footer {
+   padding: 20px 16px;
+   border-top: 1px solid #444;
+   background: #111;
+   margin: 20px 0 0 0
+}
+
+
+/* part - accueil */
+
+.accueil header {
+   text-align: center;
+   padding: 20px 0;
+   background: #444;
+}
+
+.accueil main {
+   margin: 32px auto;
+   width: 96%;
+   max-width: 1400px;
+}
+
+.accueil main .pres_1 {
+   text-align: center;
+   padding: 24px;
+   font-size: 24px
+}
+
+.accueil main .pres_2 {
+   padding: 12px
+}
+
+.accueil section {
+   margin: 32px auto;
+   width: 96%;
+   max-width: 1400px;
+}
+
+.accueil section .flex_beetw {
+   display: flex;
+   flex-flow: row wrap;
+   justify-content: space-around;
+}
+
+.accueil section article {
+   display: table;
+   padding: 0 20px;
+   max-width: 280px;
+   border: 1px solid #555;
+   margin: 0 0 20px 0
+}
+
+.accueil section article h3 {
+   text-align: center
+}
+
+.accueil section article p {}
+
+
+/* part - boutique */
+
+.boutique header {
+   text-align: center;
+   padding: 20px 0;
+   background: #444;
+}
+
+.boutique main {
+   margin: 32px auto;
+   width: 96%;
+   max-width: 1400px;
+}
+
+
+/* part - vitrine */
+
+.vitrine header {
+   text-align: center;
+   padding: 20px 0;
+   background: #444;
+}
+
+.vitrine main {
+   margin: 32px auto;
+   width: 96%;
+   max-width: 1400px;
+}
