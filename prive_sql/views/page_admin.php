@@ -4,7 +4,7 @@
 <html>
 
 <head>
-    <title>Tableau Administrateur</title>
+    <title>Administration BruzUp</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="stylesheet" href="style_page_admin.css">
@@ -31,7 +31,7 @@
             </div>
             <article>
                <label for="formGroupExampleInput2">Nom</label>
-               <input type="text" autocomplete="off" name="form_nom" placeholder="Nom du commerçant">
+               <input type="text" class="input_admin_first_cadre_ajouter" autocomplete="off" name="form_nom" placeholder="Nom du commerçant">
             </article>
             <div class="bloc6">
                <button type="submit" name="action" value="add">Ajouter</button>
@@ -49,9 +49,9 @@
                <button class="fermer" onclick="body_mode('');return false">x</button>
             </div>
             <article>
-               <input type="hidden" name="form_id" value="-1">
+               <input type="hidden" class="input_admin_id_cadre_modifier" name="form_id" value="-1">
                <label for="formGroupExampleInput2">Nom</label>
-               <input type="text" autocomplete="off" name="form_nom" placeholder="Nom du commerçant">
+               <input type="text" class="input_admin_first_cadre_modifier" autocomplete="off" name="form_nom" placeholder="Nom du commerçant">
             </article>
             <div class="bloc6">
                <button type="submit" name="action" value="update">Modifier</button>
@@ -70,7 +70,7 @@
             </div>
             <article>
                Souhaitez-vous vraiment supprimer ce commerçant ?
-               <input type="hidden" name="form_id" value="-1">
+               <input type="hidden" class="input_admin_id_cadre_supprimer" name="form_id" value="-1">
             </article>
             <div class="bloc6">
                <button type="submit" name="action" value="delete">Supprimer</button>

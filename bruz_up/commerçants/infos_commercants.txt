@@ -1,0 +1,29 @@
+1)categorie
+2)nom
+3)lien
+4)description
+5)tel
+
+Alimentation
+Le comptoir du fromager
+lien
+Le comptoir du fromager réunit les épicuriens dans une ambiance décontractée et authentique où les produits présentés sont choisis avec soin par votre fromager.#Ces produits sont en vente en boutique et à la dégustation.
+lecomptoirdufromagerbruz@orange.fr#02 99 03 13 91#tel2#adresse
+
+Shopping
+LA MARELLE
+http://www.lamarelle-bruz.fr
+description
+email#tel1#tel2#6 Place du Vert Buisson - 35170 BRUZ
+
+Shopping
+Bazar Dada
+https://www.bazardada.com/
+Boutique insolite complètement DaDa !
+email#tel1#tel2#adresse
+
+Services
+L'Atelier Bis Fleuriste
+lien
+Créations florales pour tout évènement.#Plantes d'intérieur et d'extérieur.#Objets de décoration.#Décors d'entreprise.#Livraison à Bruz et ses environs
+latelierbis@orange.fr#+33 6 63 91 97 12#02 99 52 61 75#7 avenue Joseph Jan 35170 Bruz
