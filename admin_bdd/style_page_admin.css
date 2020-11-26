@@ -55,6 +55,7 @@ body.cadre_supprimer .cadre_supprimer {
 }
 
 form input[type=text],
+form input[type=email],
 form input[type=password] {
    border: 1px solid #ced4da;
    border-radius: 5px;
@@ -147,15 +148,31 @@ button:hover {
    justify-content: space-around;
 }
 
-table.striped tr:nth-child(even) {
-   background: #BBB
+table.striped tr.searched {
+   box-shadow:0px 0px 0px 1px #eee inset
 }
 
-table.striped tr:hover {
+table.striped tr.searched:hover {
    background: #888
 }
 
 table.striped td {
    border-right: 1px solid #ccc;
    padding: 2px 0 2px 8px
+}
+
+.search_result_wait{
+    display:none;
+}
+
+.search_result_wait.searched{
+    display: table-row;
+}
+
+.input_solo{
+   border: 1px solid #ced4da;
+   border-radius: 5px;
+   padding: 8px 6px;
+   width: 40%;
+   margin: 8px 0 16px 0
 }

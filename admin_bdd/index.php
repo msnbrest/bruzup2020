@@ -1,5 +1,7 @@
 <?php
 
+// trigger client ou formulaire login, executer controller.action selon get&post
+
 ini_set('display_errors', 'on');
 error_reporting(E_ALL);
 

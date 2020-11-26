@@ -26,6 +26,13 @@ footer {
    background: #444;
 }
 
+.accueil .titre_logo{
+color:#f80
+}
+.accueil .navbar{
+background:#440
+}
+
 .accueil main {
    margin: 32px auto;
    width: 96%;
@@ -104,4 +111,15 @@ footer {
 padding:20px;
 background:#000;
 color:#f40;
+}
+
+.bouton_remonter{
+position:fixed;
+z-index:7;
+left:20px;
+bottom:20px;
+width:100px;
+height:100px;
+background:#4f4;
+color:#fff;
 }

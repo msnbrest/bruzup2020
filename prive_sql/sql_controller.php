@@ -16,13 +16,13 @@ class Controller
         $file = "../prive_sql/views/". $fileName .".php";
 
         if (file_exists($file)) {
-                ob_start();
+            ob_start();
 
-                $datas;
-                $content = ob_get_clean();
-                require $file;
+            $datas;
+            $content = ob_get_clean();
+            require $file;
 
-                return $content;
+            return $content;
         } else {
             throw new Exception("Fichier '".$file."' introuvable");
         }
@@ -47,7 +47,7 @@ class Controller
     public function delete(array $param)
     {
         $sellersRepository = new SellersRepository();
-            $sellersRepository->deleteSeller($param);
+        $sellersRepository->deleteSeller($param);
         $datas = $sellersRepository->getAllSellers();
         $this->include_page("page_admin", $datas);
     }
@@ -148,31 +148,31 @@ class SellersRepository
         }
     }
 
+    public function query_perso(string $query)
+    {
+        $res = $this->connection->prepare($query);
+        if(strpos($query, "select ")===0){
+echo"-select-";
+            $res->execute();// pour du select
+            return $res->fetchAll(PDO::FETCH_ASSOC);// pour du select
+        }else{
+echo"-drop-";
+            return $res->execute();// pour autre
+        }
+    }
+
     public function getAllSellers()
     {
-        $sql = 'SELECT * FROM anc_commercants';
+        $sql = 'SELECT * FROM bruzup_commerces';
         $query = $this->connection->prepare($sql);
         $query->execute();
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function query_perso(string $query)
-    {
-        $res = $this->connection->prepare($query);
-        if(strpos($query, "drop table")===0){
-echo"-drop-";
-            return $res->execute();// pour autre
-        }else{
-echo"-select-";
-            $res->execute();// pour du select
-            return $res->fetchAll(PDO::FETCH_ASSOC);// pour du select
-        }
-    }
-
     public function getOneSeller(string $id)
     {
         $request = $this->connection->prepare("
-                SELECT * FROM anc_commercants
+                SELECT * FROM bruzup_commerces
                     WHERE id = :id");
         $request->bindValue(':id', $id, PDO::PARAM_STR);
         $request->execute();
@@ -180,32 +180,67 @@ echo"-select-";
         return $datas;
     }
 
-    public function addSeller(array $param)
+    public function addSeller(array $params)
     {
-        $query = "INSERT INTO anc_commercants(nom) 
-            VALUES(:nom)";
+
+// ptet tester isset($params["nom"])
+// permet de passer de ça: ["codepostal","35170"],["ville","Bruz"];
+
+        $les_keys="";
+        $les_vals="";
+        // -explode params utiles vers key et vals
+        foreach($params as $key => $value){
+            if(strpos($key,"form_")===0 && $value!=""){
+                $les_keys.=",".substr($key,5);
+                if(is_numeric($value)){
+                    $les_vals.=",".$value;
+                }else{
+                    $les_vals.=",\"".str_replace(chr(34),"&#34;",$value)."\"";
+                }
+            }
+        }
+
+// à ça: commerces(codepostal,ville) VALUES(35170,"Bruz")
+
+        $query = "INSERT INTO bruzup_commerces(".substr($les_keys,1).") 
+            VALUES(".substr($les_vals,1).")";
+echo"la query vaut".$query.";";
         $res = $this->connection->prepare($query);
-        $res->bindValue(':nom', $param['form_nom'], PDO::PARAM_STR);
         $res->execute();
+// lorsque ajouté, créer table selon id (mais comment on recup id? ^^ select nom donc nom unique?)
     }
 
-    public function updateSeller(array $param)
+    public function updateSeller(array $params)
     {
-        $query = "UPDATE anc_commercants SET nom = :nom
-            WHERE id = :id";
+        
+        $query_add="";
+        // -explode params utiles vers key et vals
+        foreach($params as $key => $value){
+            if(strpos($key,"form_")===0 && $value!="" && $key!="form_id"){
+                $query_add.=", ".substr($key,5)." = ";
+                if(is_numeric($value)){
+                    $query_add.=$value;
+                }else{
+                    $query_add.="\"".str_replace(chr(34),"&#34;",$value)."\"";
+                }
+            }
+        }
+
+        $query = "UPDATE bruzup_commerces SET ".substr($query_add,2)." WHERE id = :id";
+
         $res = $this->connection->prepare($query);
-        $res->bindValue(':id', $param['form_id'], PDO::PARAM_INT);
-        $res->bindValue(':nom', $param['form_nom'], PDO::PARAM_STR);
+        $res->bindValue(':id', $params['form_id'], PDO::PARAM_INT);
         $task = $res->execute();
         return $task;
     }
 
-    public function deleteSeller(array $param){
-        if(isset($param['form_id']) || isset($param['form_id'])<0){
-            $query = "DELETE FROM anc_commercants WHERE id = :id";
+    public function deleteSeller(array $params){
+        if(isset($params['form_id']) || isset($params['form_id'])<0){
+            $query = "DELETE FROM bruzup_commerces WHERE id = :id";
             $res = $this->connection->prepare($query);
-            $res->bindValue(':id', $param['form_id'], PDO::PARAM_INT);
+            $res->bindValue(':id', $params['form_id'], PDO::PARAM_INT);
             return $res->execute();
+//afaire id !exist && table exist alors drop table
         }else{
             echo"Erreur, id commerçant non reconnu";//client_error
         }

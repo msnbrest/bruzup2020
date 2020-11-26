@@ -14,11 +14,11 @@
       Association de commerçants
    </header>
 
-   <main>
+   <main><pre>
 <?php
 echo var_dump($datas);
 ?>
-   </main>
+   </pre></main>
 
    <footer>
       les liens asso

@@ -10,8 +10,20 @@
 </head>
 
 <body class="accueil">
-   <header>
-      Association de commerçants
+	<header>
+       <div class="titre_logo">
+			Association de commerçants
+       </div>
+
+       <nav class="navbar">
+           <ul>
+               <li><a href="#">Accueil</a></li>
+               <li><a href="#">L'asso</a></li>
+               <li><a href="#">Les commerces</a></li>
+               <li><a href="#">Contact</a></li>
+               <li><a href="#">Connexion</a></li>
+           </ul>
+       </nav>
    </header>
 
    <main>
@@ -19,7 +31,7 @@
       <div class="cadre_w100p_error">
          Désolé, le document n'a pas été trouvé, vous voici à l'accueil
       </div>
-<? } ?>
+<?php } ?>
       <div class="pres_1">
          Présentation de l'asso & news caroussel?
       </div>
@@ -35,16 +47,14 @@
 
 <?php
 foreach ($datas as $seller) {
-if (isset( $seller["id"] )) {
 ?>
 
-         <article>
-            <h3><?php echo $seller["nom"]; ?> (<?php echo $seller["id"]; ?>)</h3>
-            <p>Ce magasin vous accueille sur une surface vraiment grande et vous propose plusieurs gammes de produits.</p>
+         <article style="height:600px">
+            <h3><?php echo $seller["nom"]; ?> (<?php echo $seller["id"]; ?> - <?php echo $seller["categorie"]; ?>)</h3>
+            <p><?php echo $seller["description"]; ?></p>
          </article>
 
 <?php
-}
 }
 ?>
 
@@ -54,5 +64,8 @@ if (isset( $seller["id"] )) {
    <footer>
       les liens asso
    </footer>
+
+<div class="bouton_remonter" onclick="window.scroll(0,0)"></div>
+
 </body>
 </html>

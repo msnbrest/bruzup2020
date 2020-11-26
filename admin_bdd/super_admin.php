@@ -1,6 +1,6 @@
 <?php
 
-$datemax=1606295303;
+$datemax=1606383169;
 
 include("../prive/mdp.php");
 
@@ -21,12 +21,6 @@ if( $_POST["password_postsql"]==$mdp_postsql && date("U")<$datemax ){
 			$controller->$action($request);
 		} else {*/
 			// sinon default
-			// $myquery="";
-					//drop table lfpf_nouvelleltltlt
-					//SELECT TABLE_NAME FROM information_schema.tables
-					// SELECT TABLE_NAME FROM information_schema.tables where TABLE_NAME = lfpf_noleltltlt
-					//SELECT%20TABLE_NAME%20FROM%20information_schema.tables
-			//echo"myquery = ".$myquery;
 		$controller->super_admin($request);
 		//}
 
@@ -36,7 +30,7 @@ if( $_POST["password_postsql"]==$mdp_postsql && date("U")<$datemax ){
 
 }else{
 
-	echo"Eteint depuis ".(date("U")-$datemax);
+	echo"Eteint depuis ".(date("U")-$datemax)." donc go ".(date("U")+120)." ou ".(date("U")+1200);
 
 }
 
